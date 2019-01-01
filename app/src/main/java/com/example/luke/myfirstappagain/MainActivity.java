@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity{
 
         navigationView = (NavigationView) findViewById(R.id.navigationView);
 
+        setupDrawerContent(navigationView);
+
         TextView czechName = (TextView)findViewById(R.id.czech_name);
         czechName.setIncludeFontPadding(false);
 
@@ -48,6 +50,42 @@ public class MainActivity extends AppCompatActivity{
                         return true;
                     }
                 });
+    }
+    private void setupDrawerContent(NavigationView navigationView) {
+        navigationView.setNavigationItemSelectedListener(
+                new NavigationView.OnNavigationItemSelectedListener() {
+                    @Override
+                    public boolean onNavigationItemSelected(MenuItem menuItem) {
+                        selectDrawerItem(menuItem);
+                        return true;
+                    }
+                });
+    }
+
+    public void selectDrawerItem(MenuItem menuItem) {
+        Fragment fragment = null;
+        Class fragmentClass;
+        switch(menuItem.getItemId()) {
+            case R.id.history:
+                fragmentClass = HistoryFragment.class;
+                break;
+            default:
+                fragmentClass = MainActivity.class;
+        }
+        try {
+            fragment = (Fragment) fragmentClass.newInstance();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.beginTransaction().replace(R.id.flContent, fragment).commit();
+
+        menuItem.setChecked(true);
+
+        setTitle(menuItem.getTitle());
+
+        drawerLayout.closeDrawers();
+
     }
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
