@@ -12,6 +12,9 @@
     <RelativeLayout
             android:layout_height="match_parent"
             android:layout_width="match_parent">
+        <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:text="cokoli"
+                    android:textAlignment="center"/>
         <android.support.design.widget.TextInputEditText
                 android:layout_width="239dp"
                 android:layout_height="wrap_content" android:layout_alignParentStart="true"
