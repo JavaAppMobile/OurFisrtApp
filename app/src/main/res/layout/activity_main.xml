@@ -12,6 +12,7 @@
     <RelativeLayout
             android:layout_height="match_parent"
             android:layout_width="match_parent">
+<<<<<<< HEAD
 
         <FrameLayout
                 android:id="@+id/flContent"
@@ -19,6 +20,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
 
+=======
+        <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:text="cokoli"
+                    android:textAlignment="center"/>
+>>>>>>> 40143a497b577c6cc79baffc0083a0bbb9d05aac
         <android.support.design.widget.TextInputEditText
                 android:layout_width="239dp"
                 android:layout_height="wrap_content" android:layout_alignParentStart="true"
