@@ -12,6 +12,22 @@
     <RelativeLayout
             android:layout_height="match_parent"
             android:layout_width="match_parent">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+
+        <FrameLayout
+                android:id="@+id/flContent"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+=======
+        <TextView android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:text="cokoli"
+                    android:textAlignment="center"/>
+>>>>>>> 40143a497b577c6cc79baffc0083a0bbb9d05aac
+>>>>>>> 99a10ffbff8318f6ef2cdc784f2ff3b18ef50052
         <android.support.design.widget.TextInputEditText
                 android:layout_width="239dp"
                 android:layout_height="wrap_content" android:layout_alignParentStart="true"
