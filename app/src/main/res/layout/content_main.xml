@@ -1,96 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/ScrollView01"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-<LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/content_main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="70dp"
-        android:scrollbars="vertical"
-        tools:context=".MainActivity"
-        tools:showIn="@layout/toolbar_layout">
+<RelativeLayout android:layout_height="match_parent"
+              android:layout_width="match_parent"
+              xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <android.support.design.widget.TextInputLayout
-            android:id="@+id/text_input_jmenocaje"
+    <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <android.support.design.widget.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Jméno Čaje"
-                android:inputType="text"/>
-    </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
-            android:id="@+id/text_input_ceskynazevcaje"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:counterMaxLength="40">
-        <android.support.design.widget.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxLength="40"
-                android:hint="Český název čaje"
-                android:inputType="text"/>
-    </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
-            android:id="@+id/text_input_teplotavodyprvninalev"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:counterMaxLength="10">
-        <android.support.design.widget.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxLength="10"
-                android:hint="Teplota vody a doba louhování první nálev"
-                android:inputType="text"/>
-    </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
-            android:id="@+id/text_input_teplotavodydruhynalev"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:counterMaxLength="10">
-        <android.support.design.widget.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxLength="10"
-                android:hint="Teplota vody a doba louhování druhý nálev"
-                android:inputType="text"/>
-    </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
-            android:id="@+id/text_input_teplotavodytretinalev"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:counterMaxLength="10">
-        <android.support.design.widget.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxLength="10"
-                android:hint="Teplota vody a doba louhování třetí nálev"
-                android:inputType="text"/>
-    </android.support.design.widget.TextInputLayout>
-    <android.support.design.widget.TextInputLayout
-            android:id="@+id/text_input_poznamky"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:counterMaxLength="480">
-        <android.support.design.widget.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="30dp"
-                android:minLines="1"
-                android:maxLines="10"
-                android:scrollbars="vertical"
-                android:maxLength="480"
-                android:hint="Poznámky"
-                android:inputType="textMultiLine"/>
-    </android.support.design.widget.TextInputLayout>
+            android:layout_height="match_parent"
+            android:id="@+id/fragment">
 
+    </FrameLayout>
 
-</LinearLayout>
-</ScrollView>
+</RelativeLayout>

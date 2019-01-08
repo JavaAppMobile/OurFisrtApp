@@ -54,10 +54,14 @@ public class MainActivity extends AppCompatActivity
             case R.id.history:
                 fragment = new HistoryFragment();
                 break;
+            case R.id.zapisnik:
+                fragment = new ZapisnikFragment();
+                break;
         }
         if (fragment != null) {
-            FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.content_main, fragment).commit();
+            android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
+            FragmentTransaction ft = fragmentManager.beginTransaction();
+            ft.replace(R.id.fragment, fragment).commit();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

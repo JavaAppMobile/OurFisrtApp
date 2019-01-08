@@ -5,6 +5,7 @@
             android:id="@+id/history"
             android:title="Historie Čaje" />
         <item
+            android:id="@+id/zapisnik"
             android:title="Čajový zápisník" />
         <item
             android:title="Teaklopedie" />
