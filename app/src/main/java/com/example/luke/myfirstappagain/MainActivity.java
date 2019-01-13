@@ -51,12 +51,20 @@ public class MainActivity extends AppCompatActivity
     private void displaySelectedScreen(int id) {
         Fragment fragment = null;
         switch(id) {
+            case R.id.home:
+                fragment = new HomeFragment();
+                break;
             case R.id.history:
                 fragment = new HistoryFragment();
                 break;
             case R.id.zapisnik:
                 fragment = new ZapisnikFragment();
                 break;
+            case R.id.teaklopedie:
+                fragment = new TeaklopedieFragment();
+                break;
+            default:
+                fragment = new HomeFragment();
         }
         if (fragment != null) {
             android.support.v4.app.FragmentManager fragmentManager = getSupportFragmentManager();
