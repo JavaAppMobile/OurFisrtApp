@@ -1,13 +1,16 @@
 package com.example.luke.myfirstappagain;
 
+import android.app.LauncherActivity;
+import android.app.ListActivity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-public class TeaklopedieFragment extends Fragment {
+public class TeaklopedieFragment extends ListFragment {
 
     ListView simpleList;
     String  Item[] = {"Bílý čaj", "Zelený Čaj", "Černý čaj", "Žlutý čaj", "Oolong", "Pu-erh"};
@@ -20,9 +23,8 @@ public class TeaklopedieFragment extends Fragment {
     int flags[] = {R.drawable.white, R.drawable.green, R.drawable.black, R.drawable.yellow, R.drawable.oolong, R.drawable.puerh};
 
     public TeaklopedieFragment() {
-        // Required empty public constructor
-    }
 
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -30,10 +32,34 @@ public class TeaklopedieFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_teaklopedie, container, false);
 
-        simpleList = (ListView)view.findViewById(R.id.listView);
+        simpleList = (ListView)view.findViewById(android.R.id.list);
         CustomAdapter customAdapter = new CustomAdapter(getContext(), Item,SubItem, flags);
         simpleList.setAdapter(customAdapter);
 
         return view;
     }
+
+    void newFragment (int position){
+        Fragment fragment = null;
+        switch(position) {
+            case 0:
+                fragment = new BileCaje();
+                break;
+        }
+        if (fragment != null) {
+            getActivity().getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.teaklo_frag, fragment)
+                    .addToBackStack(Item[position])
+                    .commit();
+        }
+    }
+    @Override
+    public void onListItemClick(ListView l, View v, int position, long id) {
+        super.onListItemClick(l, v, position, id);
+        newFragment(position);
+        simpleList.setVisibility(ListView.GONE);
+
+    }
+
 }
