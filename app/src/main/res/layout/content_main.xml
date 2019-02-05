@@ -8,6 +8,13 @@
             android:layout_height="match_parent"
             android:id="@+id/fragment">
 
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="hello there"
+                android:layout_marginTop="100dp"/>
+
     </FrameLayout>
+
 
 </RelativeLayout>

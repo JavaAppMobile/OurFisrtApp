@@ -4,6 +4,8 @@ import android.app.LauncherActivity;
 import android.app.ListActivity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,15 +31,22 @@ public class TeaklopedieFragment extends ListFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        super.onSaveInstanceState(savedInstanceState);
+        if (savedInstanceState != null) {
+            simpleList = savedInstanceState.getIntegerArrayList()
+        }
         View view = inflater.inflate(R.layout.fragment_teaklopedie, container, false);
 
         simpleList = (ListView)view.findViewById(android.R.id.list);
         CustomAdapter customAdapter = new CustomAdapter(getContext(), Item,SubItem, flags);
         simpleList.setAdapter(customAdapter);
 
+        if (container != null) {
+            container.removeAllViews();
+        }
         return view;
     }
+
 
     void newFragment (int position){
         Fragment fragment = null;
@@ -50,7 +59,7 @@ public class TeaklopedieFragment extends ListFragment {
             getActivity().getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.teaklo_frag, fragment)
-                    .addToBackStack(Item[position])
+                    .addToBackStack(null)
                     .commit();
         }
     }
@@ -58,8 +67,6 @@ public class TeaklopedieFragment extends ListFragment {
     public void onListItemClick(ListView l, View v, int position, long id) {
         super.onListItemClick(l, v, position, id);
         newFragment(position);
-        simpleList.setVisibility(ListView.GONE);
-
     }
 
 }

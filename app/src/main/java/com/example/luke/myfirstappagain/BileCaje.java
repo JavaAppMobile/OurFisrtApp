@@ -19,7 +19,12 @@ public class BileCaje extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.bile_caje, container, false);
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.bile_caje, container, false);
+        if (container != null) {
+            container.removeAllViews();
+        }
+        return view;
     }
 }
